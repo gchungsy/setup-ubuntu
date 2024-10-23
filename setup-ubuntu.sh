@@ -19,8 +19,7 @@ apt-get install -y build-essential \
    vim \
    net-tools \
    unzip \
-   wget \
-
+   wget
 
 echo "Installing development tools..."
 
@@ -37,16 +36,14 @@ apt-get install -y npm
 apt-get install -y docker
 apt-get install -y docker-compose
 
-
 # Install additional packages
 echo "Installing addtional packages..."
 
 apt-get install -y software-properties-common \
    dnsutils \
    tmux \
-   jq
-
-apt-get install -y htop \
+   jq \
+   htop \
    tcpdump \
    nmap \
    iptables \
@@ -60,7 +57,6 @@ apt-get install -y scp rsync lftp mosh
 apt-get install -y ldapsearch
 apt-get install -y sqlite3
 #apt-get install -y mysql psql
-
 
 echo "Setup shell..."
 
@@ -82,7 +78,6 @@ append_if_not_exists ~/.bashrc
 append_if_not_exists ~/.zshrc
 
 sudo apt install -y stow
-
 stow shell
 
 echo "\n"
