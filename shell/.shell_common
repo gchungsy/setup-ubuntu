@@ -1,0 +1,11 @@
+export EDITOR=vim
+
+alias sz='source ~/.zshrc'
+
+alias py='python3'
+
+alias g='git'
+alias ga='git add -A'
+alias gc='git commit'
+
+alias d='docker'
