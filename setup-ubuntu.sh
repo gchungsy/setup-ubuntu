@@ -33,7 +33,7 @@ apt-get install -y python3 \
 
 apt-get install -y nodejs
 apt-get install -y npm
-apt-get install -y docker
+apt-get install -y docker.io
 apt-get install -y docker-compose
 
 # Install additional packages
@@ -50,9 +50,11 @@ apt-get install -y software-properties-common \
    netcat \
    openssl
 
+apt-get install -y zsh
 apt-get install -y httpie
 apt-get install -y snmpget snmpwalk snmpset
-apt-get install -y telnet swaks mailutils
+apt-get install -y telnet
+#apt-get install swaks mailutils
 apt-get install -y scp rsync lftp mosh
 apt-get install -y ldapsearch
 apt-get install -y sqlite3
@@ -60,8 +62,22 @@ apt-get install -y sqlite3
 
 echo "Setup shell..."
 
+cat <<EOF > ~/shell_common
+export EDITOR=vim
+
+alias sz='source ~/.zshrc'
+
+alias py='python3'
+
+alias g='git'
+alias ga='git add -A'
+alias gc='git commit'
+
+alias d='docker'
+EOF
+
 COMMON_COMMANDS=(
-   "source ~/.shell_common"
+   "source ~/shell_common"
 )
 
 # Append the command to the specified file if it's not already there
@@ -77,8 +93,8 @@ append_if_not_exists() {
 append_if_not_exists ~/.bashrc
 append_if_not_exists ~/.zshrc
 
-sudo apt install -y stow
-stow shell
+
+sudo apt autoremove -y
 
 echo "\n"
 echo "Setup complete!"
