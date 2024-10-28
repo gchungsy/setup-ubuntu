@@ -57,10 +57,11 @@ apt-get install -y software-properties-common \
 
 apt-get install -y zsh
 apt-get install -y httpie
-apt-get install -y snmpget snmpwalk snmpset
+apt-get install -y snmp # contain snmpget snmpwalk snmpset
 apt-get install -y telnet
 #apt-get install swaks mailutils
-apt-get install -y scp rsync lftp mosh
+apt-get install -y openssh-client
+apt-get install -y rsync lftp mosh
 apt-get install -y ldapsearch
 apt-get install -y sqlite3
 #apt-get install -y mysql psql
