@@ -33,8 +33,13 @@ apt-get install -y python3 \
 
 apt-get install -y nodejs
 apt-get install -y npm
-apt-get install -y docker.io
-apt-get install -y docker-compose
+#apt-get install -y docker.io
+#apt-get install -y docker-compose
+
+echo "Installing docker"
+curl -fsSL https://get.docker.com -o ~/get-docker.sh
+sudo sh ~/get-docker.sh
+sudo adduser -aG docker $USER
 
 # Install additional packages
 echo "Installing addtional packages..."
