@@ -75,13 +75,22 @@ echo "Setup shell..."
 cat <<EOF > ~/shell_common
 export EDITOR=vim
 
+alias sb='source ~/.bashrc'
 alias sz='source ~/.zshrc'
 
+alias ssh='ssh -o StrictHostKeyChecking=no'
+
 alias py='python3'
+alias venv='source venv/bin/activate && which python'
 
 alias g='git'
 alias ga='git add -A'
 alias gc='git commit'
+alias gs='git status'
+alias gb='git branch'
+alias gd='git diff'
+alias gp='git push'
+alias grv='git remote -v'
 
 alias d='docker'
 EOF
