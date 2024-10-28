@@ -65,6 +65,11 @@ apt-get install -y ldapsearch
 apt-get install -y sqlite3
 #apt-get install -y mysql psql
 
+apt-get install -y openssh-server
+
+systemctl enable ssh
+systemctl start ssh
+
 echo "Setup shell..."
 
 cat <<EOF > ~/shell_common
